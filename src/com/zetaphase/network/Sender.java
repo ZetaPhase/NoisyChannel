@@ -13,12 +13,21 @@ public class Sender extends Thread {
 	
 	@Override
 	public void run(){
-		//get my ip address
-		//get to ip address
-		String toAddress = "192.168.1.69";
-		//get message
-		String message = "Dave";
-		//put message, my ip address, to ip address, into port
-		this.portManager.put(this.myAddress, message);;
+		for(int i=0;i<20;i++){
+			//get my ip address
+			//get to ip address
+			String toAddress = "192.168.1.69";
+			//get message
+			String message = "Dave";
+			//put message, my ip address, to ip address, into port
+			this.portManager.senderPutMessage(this.myAddress, new Message(message, toAddress));
+			System.out.println("I am sending the message!");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 }
