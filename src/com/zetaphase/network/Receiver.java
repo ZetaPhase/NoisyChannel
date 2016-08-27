@@ -17,12 +17,14 @@ public class Receiver extends Thread {
 			Message message = this.portManager.receiverGetMessage(this.receiverIP);
 			if (message != null){
 				System.out.println("Receiving Message: "+message.getMessage());
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			}else{
+				System.out.println("null");
+			}
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
