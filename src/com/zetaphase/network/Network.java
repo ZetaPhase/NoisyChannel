@@ -1,5 +1,7 @@
 package com.zetaphase.network;
 
+import java.util.Random;
+
 public class Network extends Thread {
 	
 	PortManager portManager;
@@ -16,7 +18,11 @@ public class Network extends Thread {
 			Message message = portManager.networkGetMessage();
 			//put retrieved message into receiverPort
 			if (message != null){
-				portManager.networkPutMessage(message.getToAddress(), message);
+				Random rand = new Random();
+				int n = rand.nextInt(100);
+				if (n>20){
+					portManager.networkPutMessage(message.getToAddress(), message);
+				}
 			}
 		}
 	}
