@@ -9,7 +9,11 @@ public class Simulator {
 		Sender senderThread = new Sender("192.168.1.68", mPortManager);
 		senderThread.start();
 		//create and start network thread
+		Network networkThread = new Network(mPortManager);
+		networkThread.start();
 		//create and start receiver thread
+		Receiver receiverThread = new Receiver("192.168.1.69", mPortManager);
+		receiverThread.start();
 	}
 
 }

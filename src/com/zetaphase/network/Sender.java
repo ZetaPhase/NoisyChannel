@@ -22,6 +22,8 @@ public class Sender extends Thread {
 			//put message, my ip address, to ip address, into port
 			this.portManager.senderPutMessage(this.myAddress, new Message(message, toAddress));
 			System.out.println("I am sending the message!");
+			System.out.println(portManager.senderPorts);
+			System.out.println(portManager.receiverPorts);
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
