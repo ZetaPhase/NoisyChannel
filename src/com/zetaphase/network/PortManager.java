@@ -24,13 +24,16 @@ public class PortManager {
 	}
 	
 	public Message networkGetMessage(){
-		List keys = new ArrayList(senderPorts.keySet());
-		Message result = senderPorts.get(keys.get(0)).get(0);
-		senderPorts.get(keys.get(0)).remove(0);
-		if (senderPorts.get(keys.get(0)).isEmpty()){
-			senderPorts.remove(keys.get(0));
+		if (! senderPorts.isEmpty()){
+			List keys = new ArrayList(senderPorts.keySet());
+			Message result = senderPorts.get(keys.get(0)).get(0);
+			senderPorts.get(keys.get(0)).remove(0);
+			if (senderPorts.get(keys.get(0)).isEmpty()){
+				senderPorts.remove(keys.get(0));
+			}
+			return result;
 		}
-		return result;
+		return null;
 	}
 	
 	public Message receiverGetMessage(String ip){

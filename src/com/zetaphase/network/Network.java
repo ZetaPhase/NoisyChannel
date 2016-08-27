@@ -15,7 +15,9 @@ public class Network extends Thread {
 			//get out messages from portManager
 			Message message = portManager.networkGetMessage();
 			//put retrieved message into receiverPort
-			portManager.networkPutMessage(message.getToAddress(), message);
+			if (message != null){
+				portManager.networkPutMessage(message.getToAddress(), message);
+			}
 		}
 	}
 	
