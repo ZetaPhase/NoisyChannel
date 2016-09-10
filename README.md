@@ -7,6 +7,7 @@ Simulation of network written in java
 - port
 - receiver
 - May randomly drop messages
+- distort messages
 
 (c) 2016 Zetaphase Tech, All Rights Reserved.
 - Licensed under Gpl V3
