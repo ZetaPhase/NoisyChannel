@@ -1,6 +1,6 @@
 # NoisyChannel
 
-Simulation of network written in java
+Simulation of network written in java.
 - sender
 - port
 - network
